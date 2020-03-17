@@ -1,0 +1,32 @@
+backend:
+#  name: test-repo
+  name: git-gateway
+  branch: master
+media_folder: public/img
+public_folder: img
+summary: "Version: {{version}} - {{title}}"
+slug:
+  encoding: "ascii"
+  clean_accents: true
+  sanitize_replacement: "_"
+collections:
+  - name: "projects"
+    label: "Projects"
+    folder: "content/projects"
+    create: true
+    fields:
+      - { label: "Title", name: "title", widget: "string"}
+      - { label: "Description", name: "body", widget: "string", required: false}
+      - label: 'Items'
+        name: "items"
+        widget: list
+        fields:
+          - { label: "ID", name: "id", widget: "string"}
+          - { label: "Comments", name: "description", widget: "string", required: false}
+          - label: 'Translations'
+            name: "translation"
+            widget: list
+            fields:
+              - { label: "Language code", name: "code", widget: "string"}
+              - { label: "Language name", name: "name", widget: "string"}
+              - { label: "Translated value", name: "value", widget: "string", required: false}
