@@ -30,3 +30,25 @@ collections:
               - { label: "Language code", name: "code", widget: "string"}
               - { label: "Language name", name: "name", widget: "string"}
               - { label: "Translated value", name: "value", widget: "string", required: false}
+  - name: "faqs"
+    label: "FAQs"
+    folder: "content"
+    create: true
+    fields:
+      - { label: "Title", name: "title", widget: "string"}
+      - label: 'Questions'
+        name: "questions"
+        widget: list
+        fields:
+          - { label: "Title", name: "title", widget: "string"}
+          - { label: "Custom Slug", name: "slug", widget: "string"}
+          - { label: "Color", name: "color", widget: "string"}
+          - { label: "Icon", name: "icon", widget: "string"}
+          - label: 'Answers'
+            name: "answers"
+            widget: list
+            fields:
+              - { label: "Title", name: "title", widget: "string"}
+              - { label: "Custom ID", name: "id", widget: "string"}
+              - { label: "Publish Date", name: "date", widget: "datetime" }
+              - { label: "Answer", name: "answer", widget: "markdown"}
